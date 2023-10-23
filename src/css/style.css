@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.audio-visualizer {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2em;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+.audio-visualizer::before {
+    content: "";
+    background: linear-gradient( 0deg, rgb(0,0,0), rgba(0,0,0,0) );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    color: #CF9FFF;
+}
+
+.track-info .cantora {
+    color: #CF9FFF;
+    margin-left: 30em;
+}
+
+
+.bg-video{
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    z-index: -1;
+}
+
+.audio-visualizer i{
+    font-size: 3em;
+    opacity: 0;
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.audio-visualizer:hover > i {
+    opacity: 1;
+}
+
+.canvas-container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 900px;
+    height: 15em;
+    position: relative;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#audio1 {
+    width: 50%;
+    margin: 5em auto;
+    display: block;
+}
+
+@media screen and (min-width: 800px) {
+    .track-info h1 {
+        font-size: 3em;
+    }
+}
